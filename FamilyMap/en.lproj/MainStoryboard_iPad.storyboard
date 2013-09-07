@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="4">
+            <objects>
+                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5">
+                        <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="K3z-yI-lw9">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1026" id="Kgy-N5-po0"/>
+                                    <constraint firstAttribute="height" constant="763" id="w97-Us-BJj"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="2" id="9q6-zJ-vm8"/>
+                                </connections>
+                            </mapView>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QTP-s4-HvH">
+                                <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="hD4-Yy-DT0">
+                                <items>
+                                    <barButtonItem enabled="NO" title="FamilyMap" style="plain" id="7og-oi-pZ8"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="9w0-Sx-gU5"/>
+                                    <barButtonItem title="Menu" id="LpU-ak-dkv">
+                                        <connections>
+                                            <action selector="showActionSheet:" destination="2" id="NMd-0C-Yg8"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="zMj-Y4-Kcd"/>
+                            <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Y6q-Um-L0l">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="FUQ-9A-WPi"/>
+                                </constraints>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="K3z-yI-lw9" firstAttribute="top" secondItem="5" secondAttribute="top" constant="-4" id="2nQ-ps-fRd"/>
+                            <constraint firstItem="QTP-s4-HvH" firstAttribute="top" secondItem="zMj-Y4-Kcd" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="2q5-gz-yOq"/>
+                            <constraint firstItem="K3z-yI-lw9" firstAttribute="trailing" secondItem="5" secondAttribute="trailing" type="default" id="3IN-GJ-OH5"/>
+                            <constraint firstItem="Y6q-Um-L0l" firstAttribute="centerX" secondItem="QTP-s4-HvH" secondAttribute="centerX" type="default" id="8pZ-7e-dww"/>
+                            <constraint firstItem="hD4-Yy-DT0" firstAttribute="leading" secondItem="5" secondAttribute="leading" type="default" id="Jfg-KS-MCp"/>
+                            <constraint firstItem="QTP-s4-HvH" firstAttribute="trailing" secondItem="5" secondAttribute="trailing" type="default" id="PvO-Tm-eJ3"/>
+                            <constraint firstItem="hD4-Yy-DT0" firstAttribute="top" secondItem="QTP-s4-HvH" secondAttribute="bottom" type="default" id="S0B-KA-rDa"/>
+                            <constraint firstItem="QTP-s4-HvH" firstAttribute="top" secondItem="Y6q-Um-L0l" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Sqh-rZ-bnO"/>
+                            <constraint firstItem="Y6q-Um-L0l" firstAttribute="centerX" secondItem="zMj-Y4-Kcd" secondAttribute="centerX" type="default" id="duK-eP-OXB"/>
+                            <constraint firstItem="hD4-Yy-DT0" firstAttribute="bottom" secondItem="5" secondAttribute="bottom" type="default" id="fQc-5o-Crd"/>
+                            <constraint firstItem="QTP-s4-HvH" firstAttribute="leading" secondItem="5" secondAttribute="leading" type="default" id="oah-VB-BsL"/>
+                            <constraint firstItem="hD4-Yy-DT0" firstAttribute="trailing" secondItem="5" secondAttribute="trailing" type="default" id="uek-pt-T44"/>
+                        </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="Spinner" destination="zMj-Y4-Kcd" id="SP8-JR-iSM"/>
+                        <outlet property="buttonBar" destination="hD4-Yy-DT0" id="cti-AL-Nw3"/>
+                        <outlet property="infoLabel" destination="QTP-s4-HvH" id="NLQ-aL-Ctz"/>
+                        <outlet property="mapView" destination="K3z-yI-lw9" id="vIc-OV-fAF"/>
+                        <outlet property="progressBar" destination="Y6q-Um-L0l" id="gQd-nh-g6R"/>
+                        <outlet property="spinner" destination="zMj-Y4-Kcd" id="9ix-pz-zqf"/>
+                        <outlet property="updateData" destination="LpU-ak-dkv" id="qXz-nC-EKy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>

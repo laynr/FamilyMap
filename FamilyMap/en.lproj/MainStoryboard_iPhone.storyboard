@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="20" width="568" height="300"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Hdu-ag-Def">
+                                <connections>
+                                    <outlet property="delegate" destination="2" id="3N3-O2-MaW"/>
+                                </connections>
+                            </mapView>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GJX-Bv-hRc">
+                                <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.99999999999999989" contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="Clu-yx-33q">
+                                <items>
+                                    <barButtonItem enabled="NO" title="FamilyMap" style="plain" id="Nme-pZ-RoD"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="3lH-MF-jP0"/>
+                                    <barButtonItem title="Menu" id="UX8-x2-Bs0">
+                                        <connections>
+                                            <action selector="showActionSheet:" destination="2" id="TRl-DN-grA"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="VDS-bz-HbM"/>
+                            <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tJC-UR-Ee2">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="Dmk-xh-ZbU"/>
+                                </constraints>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GJX-Bv-hRc" firstAttribute="top" secondItem="VDS-bz-HbM" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="1n6-0B-zHY"/>
+                            <constraint firstItem="tJC-UR-Ee2" firstAttribute="centerX" secondItem="GJX-Bv-hRc" secondAttribute="centerX" type="default" id="2a6-FB-dA7"/>
+                            <constraint firstItem="Clu-yx-33q" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="6un-pi-kUy"/>
+                            <constraint firstItem="tJC-UR-Ee2" firstAttribute="centerX" secondItem="VDS-bz-HbM" secondAttribute="centerX" type="default" id="Bas-Fb-dZ1"/>
+                            <constraint firstItem="Hdu-ag-Def" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="FNW-wD-mwt"/>
+                            <constraint firstItem="Hdu-ag-Def" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="MQ4-z9-xa0"/>
+                            <constraint firstItem="Clu-yx-33q" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="N5s-LN-Efn"/>
+                            <constraint firstItem="GJX-Bv-hRc" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="NVJ-fp-CAn"/>
+                            <constraint firstItem="Clu-yx-33q" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="OFg-oI-2mf"/>
+                            <constraint firstItem="GJX-Bv-hRc" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="Qia-K0-mFq"/>
+                            <constraint firstItem="Hdu-ag-Def" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="WYw-Mc-mG7"/>
+                            <constraint firstItem="Clu-yx-33q" firstAttribute="top" secondItem="GJX-Bv-hRc" secondAttribute="bottom" type="default" id="WxI-bc-0Go"/>
+                            <constraint firstItem="Hdu-ag-Def" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="X9j-K4-0FW"/>
+                            <constraint firstItem="GJX-Bv-hRc" firstAttribute="top" secondItem="tJC-UR-Ee2" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="dMm-Je-bcf"/>
+                        </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="Spinner" destination="VDS-bz-HbM" id="LjW-Dq-DRK"/>
+                        <outlet property="buttonBar" destination="Clu-yx-33q" id="W2Z-wn-42M"/>
+                        <outlet property="infoLabel" destination="GJX-Bv-hRc" id="np8-uZ-S2z"/>
+                        <outlet property="mapView" destination="Hdu-ag-Def" id="qzs-ni-wOX"/>
+                        <outlet property="progressBar" destination="tJC-UR-Ee2" id="Nub-k3-7sr"/>
+                        <outlet property="spinner" destination="VDS-bz-HbM" id="HrH-ca-PeH"/>
+                        <outlet property="updateData" destination="UX8-x2-Bs0" id="Bn4-vm-h59"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="306" y="-83"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
