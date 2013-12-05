@@ -12,7 +12,6 @@
 
 -(void)getPedigreeWithURL:(NSURL *)URL;
 {
-
     personIDArray = [NSMutableArray new];
 
     NSURLRequest *request=[NSURLRequest requestWithURL:URL
@@ -70,7 +69,7 @@
     
     BOOL ok = [xmlparser parse];
     if (ok == NO)
-        NSLog(@"error");
+        NSLog(@"Pedigrees error");
     else
     {
         MyManager* myManager = [MyManager sharedManager];
@@ -111,7 +110,7 @@
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     
-    if ([elementName isEqualToString:@"person"])
+    if ([elementName isEqualToString:@"gx:person"])
     {
         NSEnumerator *attribs = [attributeDict keyEnumerator];
         NSString *key, *value;

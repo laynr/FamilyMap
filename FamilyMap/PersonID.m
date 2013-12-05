@@ -42,7 +42,6 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-    
     [self parsePersonID:receivedData];
     
 }
@@ -58,12 +57,14 @@
 
     BOOL ok = [xmlparser parse];
     if (ok == NO)
-        NSLog(@"error");
+        NSLog(@"Person ID error");
     else
     {
         Pedigrees *pedigree = [[Pedigrees alloc] init];
         MyManager* myManager = [MyManager sharedManager];
-        [pedigree getPedigreeWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@?ancestors=9&properties=all&%@", myManager.pedigreeURLString, myManager.PersonId, myManager.SessionId]]];
+
+        [pedigree getPedigreeWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@?person=%@&generations=8&%@", myManager.pedigreeURLString, myManager.PersonId, myManager.SessionId]]];
+        
     }
 }
 

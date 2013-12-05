@@ -12,8 +12,7 @@
 @implementation Person
 
 -(void)getPersonWithURL:(NSURL *)URL;
-{    
-
+{
     NSURLRequest *request=[NSURLRequest requestWithURL:URL
                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
                                        timeoutInterval:60.0];
@@ -59,8 +58,6 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-    NSString *strData = [[NSString alloc]initWithData:receivedData encoding:NSUTF8StringEncoding];
-    NSLog (@"%@",strData);
     [self parsePerson:receivedData];
     
 }
@@ -76,7 +73,7 @@
 
     BOOL ok = [xmlparser parse];
     if (ok == NO)
-        NSLog(@"error");
+        NSLog(@"Person error");
     else
     {
         if (NULL != self.personPlaceID)

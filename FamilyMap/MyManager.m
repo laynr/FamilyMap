@@ -8,10 +8,11 @@
 
 #import "MyManager.h"
 
+
 // Sandbox
 #define FS_IDENTITY_V2_LOGIN    @"https://sandbox.familysearch.org/identity/v2/login?key=[YOUR KEY HERE]"
 #define CURRENT_USER_PERSON     @"https://sandbox.familysearch.org/familytree/v2/person?"
-#define PEDIGREEURLSTRING       @"https://sandbox.familysearch.org/familytree/v2/pedigree/"
+#define PEDIGREEURLSTRING       @"https://sandbox.familysearch.org/platform/tree/ancestry"
 #define AUTHORITYURLSTRING      @"https://sandbox.familysearch.org/authorities/v1/place/"
 #define FS_IDENTITY_V2_LOGOUT   @"https://sandbox.familysearch.org/identity/v2/logout"
 
@@ -19,7 +20,7 @@
 // Production
 #define FS_IDENTITY_V2_LOGIN    @"https://familysearch.org/identity/v2/login?key=[YOUR KEY HERE]"
 #define CURRENT_USER_PERSON     @"https://familysearch.org/familytree/v2/person"
-#define PEDIGREEURLSTRING       @"https://familysearch.org/familytree/v2/pedigree/"
+#define PEDIGREEURLSTRING       @"https://familysearch.org/platform/tree/ancestry"
 #define AUTHORITYURLSTRING      @"https://api.familysearch.org/authorities/v1/place/"
 #define FS_IDENTITY_V2_LOGOUT   @"https://api.familysearch.org/identity/v2/logout"
 */
@@ -138,8 +139,6 @@
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
-    ////NSLog(@"Alert View dismissed with button at index %d",buttonIndex);
-    
     switch (alertView.tag) {
         case 1:
         {

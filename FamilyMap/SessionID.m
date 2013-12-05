@@ -127,7 +127,7 @@
     
     BOOL ok = [xmlparser parse];
     if (ok == NO)
-        NSLog(@"error");
+        NSLog(@"Session ID error");
     else
     {
         PersonID *personID = [[PersonID alloc] init];
