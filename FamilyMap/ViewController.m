@@ -273,10 +273,10 @@
 
      switch (buttonIndex) {
          case 0:
-             [self updateData:[NSNumber numberWithInt:buttonIndex]];
+             [self updateData:[numberWithLong:buttonIndex]];
              break;
          case 1:
-             [self about:[NSNumber numberWithInt:buttonIndex]];
+             [self about:[numberWithLong:buttonIndex]];
              break;
          case 2:
              self.pointerView.hidden = YES;
