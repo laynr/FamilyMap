@@ -110,7 +110,7 @@
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     
-    if ([elementName isEqualToString:@"gx:person"])
+    if ([elementName isEqualToString:@"person"])
     {
         NSEnumerator *attribs = [attributeDict keyEnumerator];
         NSString *key, *value;
