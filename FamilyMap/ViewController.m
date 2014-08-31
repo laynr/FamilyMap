@@ -213,7 +213,7 @@
 
 - (IBAction) about:(id)sender {
     
-    NSString *info = @"This app maps the birthplace of your ancestors in FamilySearch.org.\nFamilySearch Certified\nby Scoutic LLC";
+    NSString *info = @"This app maps the birthplace of your ancestors in FamilySearch.org.\nFamilySearch Certified\nby Layne Moessing";
     
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"FamilyMap"
                                                         message:info
